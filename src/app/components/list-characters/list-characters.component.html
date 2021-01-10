@@ -1,0 +1,40 @@
+
+<div class="buscador">
+    <label class="sr-only" for="inlineFormInputGroupUsername">Username</label>
+    <div class="input-group">
+      <input type="text" class="form-control" 
+      [(ngModel)]="nameSearch" placeholder="Buscar Personaje Por Nombre" (keyup.enter)="searchCharacter()">
+      <div class="input-group-append">
+        <button class="btn btn-outline-primary" type="button"
+        (click)="searchCharacter()">
+        Buscar</button>
+      </div>
+    </div>
+  </div>
+
+
+<br><br>
+    <h2>Personajes de Rick y Morty</h2>
+    <br>
+    <div class="contenido row" >
+        
+        <div class="card" *ngFor="let per of results"   >
+            <!-- <button (click)="nextPage(per)"> hola</button> -->
+        <a [routerLink]="['/view/character']" [queryParams]="{id:per.id}">
+            
+            <img src={{per.image}} class="card-img-top" alt="...">
+            <br><br>
+            <p><b> {{per.name}} </b></p>
+            <div class="card-body">
+                <p class="card-text">
+                    Lugar de Origen <br>
+                    {{per.origin.name}}
+                </p>
+            </div>
+        </a>    
+            
+            <br>
+        </div>
+    </div>
+    
+<!-- </div> -->

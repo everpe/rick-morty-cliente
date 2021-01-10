@@ -1,0 +1,15 @@
+<br><br>
+<div class="container">
+    <h3>Detalle {{character.name}}</h3>
+    <br>
+    <img src={{character.image}} alt="">
+    <br><br>
+    <h5><b>Genero: </b>  {{character.gender}}</h5>
+    <h5><b>Lugar de Origen: </b> {{character.origin.name}}</h5>
+    
+    <h5><b>Especie: </b> {{character.species}}</h5>
+    <h5> <b>Estado: </b> {{character.status}}</h5>
+    <h5><b>Url de Origen: </b> {{character.origin.url}}</h5>
+    <a  [routerLink]="['/list']"k type="button" class="btn btn-info">Regresar</a>
+</div>
+
