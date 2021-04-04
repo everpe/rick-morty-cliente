@@ -28,6 +28,14 @@ export class ListCharactersComponent implements OnInit {
     this.characterService.listCharacters().subscribe((response:any) =>
       {
         this.results = response.results;
+        this.characterService.user().subscribe(
+          response=>{
+            console.log(response);
+          },
+          error=>{
+            console.log(error);
+          }
+        );
         console.log(response.results);
       },
       error=>{
@@ -61,5 +69,6 @@ export class ListCharactersComponent implements OnInit {
   }
 
 
+  
  
 }
